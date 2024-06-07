@@ -67,13 +67,13 @@ form.addEventListener('submit', (e) => {
         formData.append("id", newId.toString());
         let reference = '';
         if (newId < 10) {
-            reference = 'CR' + padStart(newId.toString(), 5, '0');
+            reference = 'SMD' + padStart(newId.toString(), 5, '0');
         }
         else if (newId > 9 && newId < 100) {
-            reference = 'CR' + padStart(newId.toString(), 4, '0');
+            reference = 'SMD' + padStart(newId.toString(), 4, '0');
         }
         else if (newId > 99 && newId < 1000) {
-            reference = 'CR' + padStart(newId.toString(), 3, '0');
+            reference = 'SMD' + padStart(newId.toString(), 3, '0');
         }
         formData.append("reference", reference);
         if (byWeight.checked) {
@@ -846,7 +846,7 @@ function addProductToCargo(c) {
                 console.log("Raw server response:", data);
                 const jsonData = JSON.parse(data);
                 if (jsonData.status === "success") {
-                    alert(jsonData.message);
+                    afficherAlerte("produit enregistrer", "success");
                 }
                 else {
                     alert('Erreur lors de l\'ajout du produit dans la cargaison');
@@ -894,9 +894,9 @@ function saveUserSender(sender) {
         console.log("data sender:", data);
         const jsonData = JSON.parse(data);
         if (jsonData.status === "success")
-            alert(jsonData.message);
+            afficherAlerte("ajout de expediteur avec succes", "success");
         else
-            alert('Erreur lors de l\'ajout de l\'expéditeur');
+            afficherAlerte('Erreur lors de l\'ajout de l\'expéditeur', "error");
     }).catch(error => console.error('Erreur:', error));
 }
 function saveUserReceiver(receiver) {
@@ -912,9 +912,9 @@ function saveUserReceiver(receiver) {
         console.log("data sender:", data);
         const jsonData = JSON.parse(data);
         if (jsonData.status === "success")
-            alert(jsonData.message);
+            afficherAlerte("ajout destinataire", "success");
         else
-            alert('Erreur lors de l\'ajout du destinataire');
+            afficherAlerte("Erreur lors de l\'ajout du destinataire", "error");
     }).catch(error => console.error('Erreur:', error));
 }
 // document.getElementById("product-close-top")?.addEventListener("click", () =>{
@@ -981,4 +981,27 @@ function displayCargo() {
     })
         .catch(error => console.error('Erreur:', error));
 }
-//details
+//message alert
+function afficherAlerte(message, type) {
+    let alertDiv = document.getElementById("alert");
+    let alertContent = document.getElementById("alertContent");
+    // Remove any previous color classes
+    alertContent.classList.remove('bg-green-200', 'text-green-800', 'bg-red-200', 'text-red-800', 'bg-blue-200', 'text-blue-800');
+    switch (type) {
+        case 'success':
+            alertContent.classList.add('bg-green-200', 'text-green-800');
+            break;
+        case 'error':
+            alertContent.classList.add('bg-red-200', 'text-red-800');
+            break;
+        default:
+            alertContent.classList.add('bg-blue-200', 'text-blue-800');
+    }
+    alertContent.textContent = message;
+    alertDiv.classList.remove('hidden');
+    alertDiv.classList.add('flex', 'items-center', 'justify-center');
+    setTimeout(() => {
+        alertDiv.classList.add('hidden');
+        alertDiv.classList.remove('flex', 'items-center', 'justify-center');
+    }, 5000);
+}

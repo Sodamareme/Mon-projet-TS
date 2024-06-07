@@ -1,4 +1,9 @@
-
+<!-- ======== message d'alerte ====================== -->
+<div id="alert" class=" fixed top-1 w-1/4 left-1/2 h-1/5 right-0 m-4 p-4 bg-neutral-300 rounded-lg shadow-lg text-gray-800 hidden">
+    <div class="alertContent" id="divContent">
+       <p id="alertContent">Mon message d'alerte</p>
+    </div>
+ </div> 
 <div class="flex justify-between items-center">
     <h1 class="font-bold">Liste des cargaisons</h1>
     <div class="mt-4">
