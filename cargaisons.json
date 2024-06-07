@@ -38,7 +38,6 @@
                         "telephone": "761735729",
                         "type": "receiver"
                     }
-
                 },
                 {
                     "id": "1",
@@ -558,6 +557,22 @@
             "globalState": "OPEN",
             "progressionState": "EN ATTENTE",
             "image": "https:\/\/www.inc-conso.fr\/sites\/default\/files\/avion-800_1.png"
+        },
+        {
+            "id": "15",
+            "reference": "CR0015",
+            "maxWeight": "null",
+            "maxNbrProduct": "123",
+            "totalAmount": "0",
+            "distance": "871.16",
+            "departurePoint": "Alg\u00e9rie",
+            "arrivalPoint": "Niger",
+            "leavingDate": "2024-06-07",
+            "arrivedDate": "2024-06-07",
+            "type": "MARITIME",
+            "globalState": "OPEN",
+            "progressionState": "EN ATTENTE",
+            "image": "https:\/\/www.trade-easy.fr\/wp-content\/uploads\/2022\/06\/Cout-fret-maritime-TRADE.EASY_.png"
         }
     ]
 }

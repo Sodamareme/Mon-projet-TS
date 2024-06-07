@@ -401,14 +401,14 @@ function pagination(page: number = currentPage){
                 <td>${cargaison.distance + ' (KM)'}</td>
                 <td>${cargaison.type}</td>
                 <td>${cargaison.globalState}</td>
-                <select class="mt-6 bg-pink-600 text-white px-2 py-1 rounded hover:bg-blue-800 ">
+                <select class="mt-6 bg-pink-600 text-white px-2 py-1 rounded hover:bg-pink-300 é">
                 <option>${cargaison.progressionState}</option>
                 <option>En Cours</option>
                 <option>Retard</option>
                 <option>Perdue</option>
                 </select>
-                <td><button type="button" class="add-product-btn bg-blue-500 text-white px-4 py-1 ml-2 rounded hover:bg-blue-800" data-id="${cargaison.id}">Ajouter</button></td>
-                <td><button class="bg-blue-500 text-white px-4 py-1 ml-2 rounded hover:bg-blue-800 show-details-btn" data-id="${cargaison.id}">Détails</button></td>
+                <td><button type="button" class="add-product-btn bg-pink-300 text-white px-4 py-1 ml-2 rounded hover:bg-pink-700" data-id="${cargaison.id}">Ajouter</button></td>
+                <td><button class="bg-pink-300 text-white px-4 py-1 ml-2 rounded hover:bg-pink-700 show-details-btn" data-id="${cargaison.id}">Détails</button></td>
                 `;
                 tbodyCargo.appendChild(row);
             }

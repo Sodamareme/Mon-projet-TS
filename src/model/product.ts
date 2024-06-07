@@ -35,3 +35,4 @@ export class Unbreakable extends Material{
         super(id, code, weight, state, type, totalPrice, sender, receiver);
     }
 }
+

@@ -3,7 +3,7 @@
     <h1 class="font-bold">Liste des cargaisons</h1>
     <div class="mt-4">
         <!-- <select id="countries_disabled" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 ml-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> -->
-        <select id="cargo-type-search" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 block w-full py-3 pl-2 pr-11 ml-3 dark:bg-blue-400 dark:border-blue-400 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500">
+        <select id="cargo-type-search" class="bg-pink-800 border border-pink-900 text-gray-900  rounded-lg focus:bg-pink-300 block w-full py-3 pl-2 pr-11 ml-3 dark:bg-pink-300 dark:bg-pink-100 dark:placeholder-pink-400 dark:text-gray dark:focus:pink-100">
             <option selected disabled value="">Filter par cargaison</option>
             <option value="AIR">Aérienne</option>
             <option value="MARITIME">Maritime</option>
@@ -36,19 +36,19 @@
     </select> -->
     <div class="flex gap-2 mt-6">
         <div class="relative">
-            <input class="h-12 w-64 rounded-full outline-none pl-8 border border-blue-400 bg-gray-200" type="text" id="cargo-code-search" placeholder="Rechercher par code">
+            <input class="h-12 w-64 rounded-full outline-none pl-8 border border-pink-300 bg-white" type="text" id="cargo-code-search" placeholder="Rechercher par code">
             <div class="absolute top-3 left-3">
                 <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
             </div>
         </div>
         <div class="relative">
-            <input class="h-12 w-80 rounded-full outline-none pl-8 border border-blue-400 bg-gray-200" type="text" id="departure-point-search" placeholder="Rechercher par lieu de départ">
+            <input class="h-12 w-80 rounded-full outline-none pl-8 border border-pink-300 bg-white" type="text" id="departure-point-search" placeholder="Rechercher par lieu de départ">
             <div class="absolute top-3 left-3">
                 <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
             </div>
         </div>
         <div class="relative">
-            <input class="h-12 w-80 rounded-full outline-none pl-8 border border-blue-400 bg-gray-200" type="text" id="arrival-point-search" placeholder="Rechercher par lieu de d'arrivée">
+            <input class="h-12 w-80 rounded-full outline-none pl-8 border border-pink-300 bg-white" type="text" id="arrival-point-search" placeholder="Rechercher par lieu de d'arrivée">
             <div class="absolute top-3 left-3">
                 <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
             </div>
@@ -57,11 +57,11 @@
 
     <div class="ml-14 mt-6">
         <label>Date départ</label>
-        <input type="date" class="border pl-2 py-1 px-5 rounded-xl mt-1 border-blue-400 bg-gray-200 outline-none" id="leaving-date-search">
+        <input type="date" class="border pl-2 py-1 px-5 rounded-xl mt-1 border-pink-300 bg-white outline-none" id="leaving-date-search">
     </div>
     <div class="mt-6">
         <label>Date arrivée</label>
-        <input type="date" class="border pl-2 py-1 px-5 rounded-xl mt-1 border-blue-400 bg-gray-200 outline-none" id="arrived-date-search">
+        <input type="date" class="border pl-2 py-1 px-5 rounded-xl mt-1 border-pink-300 bg-white outline-none" id="arrived-date-search">
     </div>
 </div>
 
@@ -75,7 +75,7 @@
 <!-- TABLEAU -->
 <div class="overflow-x-auto mt-5 ">
     <table class="table text-black">
-        <thead class="bg-custom-blue-sky text-black">
+        <thead class="bg-pink-300 text-black">
         <tr>
             <th>Code</th>
             <th>Poids/Nbr Colis</th>
@@ -93,65 +93,6 @@
         </tr>
         </thead>
         <tbody id="tbody-cargo">
-            <!-- <tr class="tr-hoverable">
-            <td>
-                <div class="flex items-center gap-3">
-                <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                    <img
-                        src="https://www.inc-conso.fr/sites/default/files/avion-800_1.png"
-                        alt="Avatar Tailwind CSS Component"
-                    />
-                    </div>
-                </div>
-                <div>
-                    <div class="font-bold">101</div>
-                    <div class="border-2 border-white text-xs opacity-50 badge badge-xs badge-error"></div>
-                </div>
-                </div>
-            </td>
-            <td>
-                Aly TAll
-                <br />
-                <span class="text-xs opacity-50">
-                inscrit le : 10/10/2004
-                </span>
-            </td>
-            <td>NIANG</td>
-            <td>
-                70.000
-            </td>
-            
-            </tr>
-            <tr class="tr-hoverable">
-            <td>
-                <div class="flex items-center gap-3">
-                <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                    <img
-                        src="https://www.inc-conso.fr/sites/default/files/avion-800_1.png"
-                        alt="Avatar Tailwind CSS Component"
-                    />
-                    </div>
-                </div>
-                <div>
-                    <div class="font-bold">101</div>
-                    <div class="border-2 border-white text-xs opacity-50 badge badge-xs badge-error"></div>
-                </div>
-                </div>
-            </td>
-            <td>
-                Aly TAll
-                <br />
-                <span class="text-xs opacity-50">
-                inscrit le : 10/10/2004
-                </span>
-            </td>
-        
-            </td>
-           
-            </tr> -->
-
             <?php foreach($cargos['cargaisons'] as $c) : ?>
                 <?php 
                     // Convertir les chaînes "null" en valeurs nulles réelles
@@ -198,7 +139,7 @@
 
     <!-- MODAL ADD CARGO -->
 <dialog id="my_modal_4" class="modal">
-  <div class="modal-box w-11/12 max-w-5xl bg-pink-600">
+  <div class="modal-box w-11/12 max-w-5xl bg-pink-300">
     <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
@@ -283,7 +224,7 @@
 
     <!-- MODAL ADD PRODUCT -->
 <dialog id="my_modal_5" class="modal">
-  <div class="modal-box w-11/12 max-w-5xl bg-pink-600">
+  <div class="modal-box w-11/12 max-w-5xl bg-pink-300">
     <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 product-close-top">✕</button>
       </form>
@@ -360,8 +301,8 @@
             <div class="pl-2.5 text-red-600 hidden" id="err-distance">error</div>
 
           <div class="flex justify-end gap-3 mt-4">
-            <button type="button" class="btn btn-error text-white" onclick="document.getElementById('my_modal_5').close()">Annuler</button>
-            <button class="btn btn-primary text-white">Ajouter</button>
+            <button type="button" class="btn btn-error text-white " onclick="document.getElementById('my_modal_5').close()">Annuler</button>
+            <button class="btn btn-primary text-white bg-pink-600 ">Ajouter</button>
           </div>
     </form>
 
@@ -374,7 +315,7 @@
     <div id="cargoDetails">
         </div>
     <table class="table">
-        <thead class="bg-custom-blue-sky text-black">
+        <thead class="bg-pink-300 text-black">
         <tr>
             <th>id</th>
             <th>code</th>
@@ -388,7 +329,7 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-error text-white" onclick="closeModal()">Fermer</button>
+    <button type="button" class="btn btn-error text-white " onclick="closeModal()">Fermer</button>
     
   </div>
 </div>
